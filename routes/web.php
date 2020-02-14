@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PublicController@index')->name('allPost');
+Route::get('post/{id}','PublicController@singlePost')->name('singlePost');
+Route::get('about','PublicController@about')->name('about');
+
+Route::get('contact','PublicController@contact')->name('contact');
+Route::Post('contact','PublicController@contactPost')->name('contactPost');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
