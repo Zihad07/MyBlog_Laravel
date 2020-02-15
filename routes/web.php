@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PublicController@index')->name('allPost');
+Route::get('/', 'PublicController@index')->name('index');
 Route::get('post/{id}','PublicController@singlePost')->name('singlePost');
 Route::get('about','PublicController@about')->name('about');
 
@@ -20,4 +20,10 @@ Route::Post('contact','PublicController@contactPost')->name('contactPost');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
+
+//Admin Route
+Route::prefix('admin')->group(function (){
+    Route::get('/dashboard','AdminController@dashboard')->name('adminDashboard');
+});
