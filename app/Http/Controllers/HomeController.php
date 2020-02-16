@@ -19,10 +19,16 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function index()
     {
-        return view('dashboard');
+        if(auth()->user()->admin == true){
+            return redirect(route('adminDashboard'));
+        }elseif (auth()->user()->author == true){
+            return redirect(route('authorDashboard'));
+        }else{
+            return redirect(route('userDashboard'));
+        }
     }
 }
