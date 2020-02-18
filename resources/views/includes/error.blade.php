@@ -1,13 +1,8 @@
 
-@if ($errors->any())
-
-        <ul>
-            @foreach ($errors->all() as $error)
-                <div class="alert alert-danger">
-                    <li>{{ $error }}</li>
-                </div>
-            @endforeach
-        </ul>
+@if(session('error'))
+    <div class="p-2 text-danger">
+        <strong>{{session('error')}}</strong>
+    </div>
 @endif
 
 

@@ -12,6 +12,7 @@
                         <div class="card-header bg-light">
                             Account Settings
                             @include('includes.success')
+                            @include('includes.errors')
                             @include('includes.error')
                         </div>
 

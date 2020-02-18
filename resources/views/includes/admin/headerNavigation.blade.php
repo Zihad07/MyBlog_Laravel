@@ -12,20 +12,9 @@
     </a>
 
     <ul class="navbar-nav ml-auto">
-{{--        <li class="nav-item d-md-down-none">--}}
-{{--            <a href="#">--}}
-{{--                <i class="fa fa-bell"></i>--}}
-{{--                <span class="badge badge-pill badge-danger">5</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-
-{{--        <li class="nav-item d-md-down-none">--}}
-{{--        <a href="#">--}}
-{{--            <i class="fa fa-envelope-open"></i>--}}
-{{--            <span class="badge badge-pill badge-danger">5</span>--}}
-{{--        </a>--}}
-{{--        </li>--}}
-
+        @if(auth()->user()->author == true)
+            <a href="{{route('newPost')}}" class="btn btn-primary btn-sm mr-3" style="border-radius: 5%;">New Post</a>
+        @endif
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="{{asset('admin/assets/imgs/avatar-1.png')}}" class="avatar avatar-sm" alt="logo">
@@ -48,4 +37,5 @@
             </div>
         </li>
     </ul>
+
 </nav>

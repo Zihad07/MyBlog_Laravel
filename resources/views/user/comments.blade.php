@@ -33,7 +33,7 @@
                                     <form id="deleteComment-{{$comment->id}}" action="{{route('deleteComment',$comment->id)}}" method="post">
                                         @csrf
                                     </form>
-                                    <a href="#" onclick="document.getElementById('deleteComment-{{$comment->id}}').submit();" class="btn btn-sm btn-danger">
+                                    <a href="#" onclick="document.getElementById('deleteComment-{{$comment->id}}').submit();" class="btn btn-sm btn-dangerphp">
                                        <i class="icon icon-trash"></i> Delete
                                     </a>
                                 </td>
